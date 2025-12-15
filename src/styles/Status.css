@@ -1,0 +1,48 @@
+/*
+ * Status Component Styles
+ */
+
+.status {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.status__label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-sm);
+}
+
+.status__message {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all var(--transition-medium);
+}
+
+/* Turn states */
+.status__message--turn-x {
+  color: var(--color-x-primary);
+  text-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+}
+
+.status__message--turn-o {
+  color: var(--color-o-primary);
+  text-shadow: 0 0 30px rgba(244, 63, 94, 0.5);
+}
+
+/* Winner states */
+.status__message--winner-x {
+  color: var(--color-x-primary);
+}
+
+.status__message--winner-o {
+  color: var(--color-o-primary);
+}
+
+/* Draw state */
+.status__message--draw {
+  color: var(--color-text-secondary);
+}

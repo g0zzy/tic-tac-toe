@@ -1,0 +1,97 @@
+/*
+ * Tic Tac Toe - Animations
+ * Keyframe definitions and animation utilities
+ */
+
+/* Title glow animation */
+@keyframes titleGlow {
+  0% {
+    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 30px rgba(244, 63, 94, 0.3));
+  }
+}
+
+/* Winner status pulse */
+@keyframes winPulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 30px currentColor;
+  }
+  100% {
+    transform: scale(1.05);
+    text-shadow: 0 0 50px currentColor;
+  }
+}
+
+/* Board entrance */
+@keyframes boardAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Square entrance */
+@keyframes squareAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mark placement */
+@keyframes markAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Winning square pulse */
+@keyframes winningSquare {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Animation utility classes */
+.animate-title-glow {
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+.animate-win-pulse {
+  animation: winPulse 0.6s ease-in-out infinite alternate;
+}
+
+.animate-board-appear {
+  animation: boardAppear 0.6s ease-out;
+}
+
+.animate-square-appear {
+  animation: squareAppear 0.4s ease-out backwards;
+}
+
+.animate-mark-appear {
+  animation: markAppear 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-winning-square {
+  animation: winningSquare 0.5s ease-in-out infinite alternate;
+}

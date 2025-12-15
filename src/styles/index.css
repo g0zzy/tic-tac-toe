@@ -1,0 +1,16 @@
+/*
+ * Tic Tac Toe - Main Stylesheet
+ * Imports all component styles in correct order
+ */
+
+/* Foundation */
+@import './variables.css';
+@import './animations.css';
+
+/* Components */
+@import './Square.css';
+@import './Board.css';
+@import './Scoreboard.css';
+@import './Status.css';
+@import './Button.css';
+@import './Game.css';

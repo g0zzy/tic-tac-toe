@@ -1,0 +1,99 @@
+/* 
+ * Tic Tac Toe - Design Tokens & Base Styles
+ * CSS Custom Properties for consistent theming
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Mono:wght@700&display=swap');
+
+:root {
+  /* Colors - Primary */
+  --color-x-primary: #818cf8;
+  --color-x-glow: rgba(99, 102, 241, 0.8);
+  --color-x-bg: rgba(99, 102, 241, 0.1);
+  --color-x-border: rgba(99, 102, 241, 0.3);
+  --color-x-shadow: rgba(99, 102, 241, 0.2);
+
+  --color-o-primary: #fb7185;
+  --color-o-glow: rgba(244, 63, 94, 0.8);
+  --color-o-bg: rgba(244, 63, 94, 0.1);
+  --color-o-border: rgba(244, 63, 94, 0.3);
+  --color-o-shadow: rgba(244, 63, 94, 0.2);
+
+  /* Colors - Neutral */
+  --color-bg-primary: #0a0a0f;
+  --color-bg-secondary: rgba(255, 255, 255, 0.03);
+  --color-bg-tertiary: rgba(255, 255, 255, 0.06);
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-medium: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.15);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.7);
+  --color-text-muted: rgba(255, 255, 255, 0.4);
+  --color-text-subtle: rgba(255, 255, 255, 0.3);
+
+  /* Typography */
+  --font-display: 'Space Mono', monospace;
+  --font-body: 'Outfit', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 100px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.6s ease;
+
+  /* Shadows */
+  --shadow-glow-x: 0 0 30px var(--color-x-shadow);
+  --shadow-glow-o: 0 0 30px var(--color-o-shadow);
+  --shadow-elevated: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --shadow-button: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Utility Classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

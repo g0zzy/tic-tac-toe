@@ -1,0 +1,89 @@
+/*
+ * Square Component Styles
+ */
+
+.square {
+  width: clamp(80px, 20vw, 110px);
+  height: clamp(80px, 20vw, 110px);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.square::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+/* Hover state for empty squares */
+.square:hover:not(.square--filled) {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-button);
+}
+
+.square:hover:not(.square--filled)::before {
+  opacity: 1;
+}
+
+.square:active:not(.square--filled) {
+  transform: translateY(0);
+}
+
+/* X mark styles */
+.square--x {
+  background: var(--color-x-bg);
+  border-color: var(--color-x-border);
+  box-shadow: var(--shadow-glow-x), inset 0 0 30px var(--color-x-bg);
+}
+
+/* O mark styles */
+.square--o {
+  background: var(--color-o-bg);
+  border-color: var(--color-o-border);
+  box-shadow: var(--shadow-glow-o), inset 0 0 30px var(--color-o-bg);
+}
+
+/* Winning square states */
+.square--winning.square--x {
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.5),
+    inset 0 0 40px rgba(99, 102, 241, 0.2);
+}
+
+.square--winning.square--o {
+  box-shadow: 0 0 40px rgba(244, 63, 94, 0.5),
+    inset 0 0 40px rgba(244, 63, 94, 0.2);
+}
+
+/* Mark text */
+.square__mark {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  font-weight: 700;
+}
+
+.square--x .square__mark {
+  color: var(--color-x-primary);
+  text-shadow: 0 0 20px var(--color-x-glow);
+}
+
+.square--o .square__mark {
+  color: var(--color-o-primary);
+  text-shadow: 0 0 20px var(--color-o-glow);
+}
